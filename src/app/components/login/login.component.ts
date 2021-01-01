@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NavBarService } from 'src/app/services/nav-bar.service';
 
 @Component({
   selector: 'app-login',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  public username : string = null;
+  public password : string = null;
+
+  constructor(public nav : NavBarService) { }
 
   ngOnInit(): void {
+    this.nav.hide();
   }
 
 }
