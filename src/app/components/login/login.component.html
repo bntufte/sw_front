@@ -1,5 +1,5 @@
-<div class="row">
-    <div class="col-xl-3 login">
+<div class='container'>
+    <div class="col-xl-4 login">
         <h4 class="col-lg-12 text-center" id="header">Login to Play</h4>
         <label>Username:</label>
         <input class="col-sm-12 form-control" type="text" placeholder="Enter Password">
@@ -8,9 +8,13 @@
         <br>
         <button class='btn btn-primary'>Login</button>
     </div>
-    <span>
-        <div>
-            <h5 class = "text-center">New User?</h5>
+    <br>
+    <div class='col-xl-4 login' id='register'>
+        <div id='new-user'>
+            <h5 class="text-center">New User?</h5>
         </div>
-    </span>
+        <div id='register-btn'>
+            <button class='btn btn-primary' [routerLink]="['register']">Register</button>
+        </div>
+    </div>
 </div>
