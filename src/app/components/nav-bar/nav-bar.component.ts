@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NavBarService } from 'src/app/services/nav-bar.service';
 
 @Component({
   selector: 'app-nav-bar',
@@ -7,20 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavBarComponent implements OnInit {
 
-  constructor() { }
+  constructor(public nav: NavBarService) { }
 
   ngOnInit(): void {
   }
-
-
-// ariaExpanded:any = document.getElementById("dropdown-profile").getAttribute("aria-expanded");
-
-// dropdown() {
-//   if (this.ariaExpanded == false) {
-//     this.ariaExpanded = true;
-//   } else {
-//     this.ariaExpanded = false;
-//   }
-// }
-
 }
