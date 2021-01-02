@@ -1,0 +1,24 @@
+.register{
+    margin:auto;
+}
+
+.register-box{
+    background-color: white;
+}
+
+#register-btn{
+    width: 100%;
+    margin:auto;
+    
+}
+
+#register-unit{
+    margin: auto;
+    padding: 110px 0px;
+}
+
+.user-btn{
+    background-color: black;
+    border:none;
+    color:yellow;
+}
