@@ -1,3 +1,7 @@
 #trivia-div {
     background-color: gray;
 }
+
+label {
+    font-weight: bolder;
+}

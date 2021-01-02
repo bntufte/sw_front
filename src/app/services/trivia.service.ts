@@ -14,7 +14,10 @@ export class TriviaService {
   //replace any with Question model
   getRandomQuestion(): Observable<any> {
 
-    return this.http.get(this.url + 'question') as Observable<any>;
+    //replace any with Question model
+    //return this.http.get(this.url + 'question') as Observable<any>;
+
+    return null;
 
   }
 
