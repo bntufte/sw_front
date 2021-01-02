@@ -14,8 +14,12 @@ export class TriviaComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  getQuestion(): Question {
+  getQuestion(): any {
 
+    //randomly get question from Question
+    //randomly get data from API
+
+    this.question = 'This is a Question';
   }
 
 }
