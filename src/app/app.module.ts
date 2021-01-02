@@ -8,6 +8,7 @@ import { LoginComponent } from './components/login/login.component';
 import { BannerComponent } from './components/banner/banner.component';
 import { RegisterComponent } from './components/register/register.component';
 import { FormsModule } from '@angular/forms';
+import { TriviaComponent } from './components/trivia/trivia.component';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { FormsModule } from '@angular/forms';
     NavBarComponent,
     LoginComponent,
     BannerComponent,
-    RegisterComponent
+    RegisterComponent,
+    TriviaComponent
   ],
   imports: [
     BrowserModule,
