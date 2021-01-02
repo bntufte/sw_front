@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TriviaComponent implements OnInit {
 
+  public question: string = null;
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  getQuestion(): Question {
+
   }
 
 }
