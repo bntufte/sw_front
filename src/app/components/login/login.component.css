@@ -1,17 +1,34 @@
 .login{
     margin:auto;
 }
-
+/* 
 #new-user{
     width: 40%;
     float: left;
-}
+} */
 
-#register-btn{
-    width: 10%;
-    float: left;
+.register-btn{
+    width: 67%;
+    float: right;
 }
 
 .login-box{
     background-color: white;
+}
+
+#login-btn{
+    width: 100%;
+    margin:auto;
+    
+}
+
+#login-unit{
+    margin: auto;
+    padding: 150px 0px;
+}
+
+.user-btn{
+    background-color: black;
+    border:none;
+    color:yellow;
 }
