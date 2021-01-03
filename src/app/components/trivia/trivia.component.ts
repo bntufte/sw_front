@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, RouterEvent, RouterLink, RouterLinkWithHref } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Question } from 'src/app/models/question';
 import { TriviaService } from 'src/app/services/trivia.service';
@@ -10,10 +11,15 @@ import { TriviaService } from 'src/app/services/trivia.service';
 })
 export class TriviaComponent implements OnInit {
 
+  public router: Router;
+  public numberOfWrongQuestions: number = 0;
+  public score: number;
   public question: Question;
   public subject: string;
   public answer: string;
-  public info: string = '';
+  public info: string;
+  public isCorrect: boolean;
+  public needNewQuestion: boolean;
 
   constructor(public triv: TriviaService) { }
 
@@ -21,8 +27,7 @@ export class TriviaComponent implements OnInit {
   }
 
   getQuestion() {
-    //randomly get question from Question
-    //randomly get data from API
+    this.needNewQuestion = false;
     let randomNumber: number = this.triv.getRandomInt(6 + 1);
 
     this.triv.getRandomQuestion(randomNumber).subscribe(
@@ -37,6 +42,16 @@ export class TriviaComponent implements OnInit {
         
         if (randomNumber === 0) {
           this.answer = response.height;
+        } else if (randomNumber === 1) {
+          this.answer = response.location;
+        } else if (randomNumber === 2) {
+          this.answer = response.speed;
+        } else if (randomNumber === 3) {
+          this.answer = response.type;
+        } else if (randomNumber === 4) {
+          this.answer = response.year;
+        } else if (randomNumber === 5) {
+          this.answer = response.planet;
         }
 
       }
@@ -44,15 +59,27 @@ export class TriviaComponent implements OnInit {
 
   }
 
-  checkAnswer(answer: string) {
+  checkAnswer() {
 
-    if (document.getElementById("entered-answer").nodeValue == answer.toLocaleLowerCase()) {
-      this.info = this.triv.awardPoints();
+    this.needNewQuestion = true;
+
+    if (document.getElementById("entered-answer").nodeValue == document.getElementById("entered-answer").nodeValue.toLowerCase()) {
+      this.score ++;
+      this.isCorrect = true;
+      this.info = "Correct! You have earned 1 point"
     } else {
-      this.info = "Sorry, Wrong Answer";
-      document.getElementById("entered-answer-label").remove();
-      document.getElementById("entered-answer").remove();
-      document.getElementById("submit-btn").remove();
+
+      if (this.numberOfWrongQuestions === 10) {
+        this.triv.enterScore(this.score);
+        this.router.navigate(['/leaderboard']);
+      } else {
+        this.isCorrect = false;
+        this.info = "Sorry, Wrong Answer";
+        document.getElementById("entered-answer-label").remove();
+        document.getElementById("entered-answer").remove();
+        document.getElementById("submit-btn").remove();
+        }
+
     }
   }
 

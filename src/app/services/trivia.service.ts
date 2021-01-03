@@ -47,10 +47,8 @@ export class TriviaService {
 
   }
 
-  awardPoints(): string {
-
-    let points: number;
-    return 'Correct! You have earned ' + points + 'points';
+  enterScore(score: number) {
+    this.http.patch(this.ServerUrl + 'score', score);
   }
 
 }

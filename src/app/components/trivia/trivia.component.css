@@ -1,7 +1,45 @@
+/* #notice {
+    background-color: #B99D31;
+    padding-top: 10px;
+} */
+
+hr {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    border: 0;
+    border-top: 1px solid rgba(0, 0, 0, 1);
+}
+
 #trivia-div {
-    background-color: gray;
+    background-color: #B99D31;
+    padding: 50px;
+}
+
+#question {
+    font-weight: bolder;
 }
 
 label {
     font-weight: bolder;
+}
+
+input:hover {
+    background-color: lightblue;
+}
+
+button:hover {
+    background-color: #1F72B8;
+}
+
+button {
+    margin-top: 10px;
+    margin-right: 10px;
+}
+
+#false {
+    color: red;
+}
+
+#true {
+    color: green;
 }
