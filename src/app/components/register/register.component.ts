@@ -11,9 +11,11 @@ import { RegisterService } from 'src/app/services/register.service';
 })
 export class RegisterComponent implements OnInit {
 
-  newUsername: string;
-  newPassword: string;
-  confirmPassword: string;
+  newUsername : string;
+  newPassword : string;
+  confirmPassword : string;
+  visible : boolean = true;
+  message : string = "";
 
   constructor(public nav: NavBarService, private register: RegisterService) { }
 
@@ -25,8 +27,11 @@ export class RegisterComponent implements OnInit {
     let newUser = new NewUser(this.newUsername, this.newPassword, this.confirmPassword);
     if (newUser.password === newUser.confirmPassword) {
       let user = new User(this.newUsername, this.newPassword);
-      this.register.register(user).subscribe();
+      this.register.register(user).subscribe();//ask Tim about this.
+      this.message = "Registration Was Successful"
+      this.visible = !this.visible;
     }else{
+      this.message = "Your Passwords Did Not Match";
       console.log("Passwords do not match.")
     }
   }

@@ -1,4 +1,4 @@
-.register{
+.register,.login{
     margin:auto;
 }
 
@@ -14,11 +14,26 @@
 
 #register-unit{
     margin: auto;
-    padding: 110px 0px;
+    padding: 80px 0px;
 }
 
 .user-btn{
     background-color: black;
     border:none;
     color:yellow;
+}
+
+.login-btn{
+    width: 67%;
+    float: right;
+}
+
+#return{
+    background-color: black;
+    border:none;
+    color:yellow;
+}
+
+#message{
+    text-align: center;
 }

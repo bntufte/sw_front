@@ -3,16 +3,28 @@
         <br>
         <h4 class="col-lg-12 text-center" id="header">Please Provide a Username and Password</h4>
         <label>Username:</label>
-        <input class="col-sm-12 form-control" type="text" [(ngModel)] ="newUsername" placeholder="Enter Username" required>
+        <input class="col-sm-12 form-control" type="text" [(ngModel)]="newUsername" placeholder="Enter Username"
+            required>
         <br>
         <label>Password:</label>
-        <input class="col-sm-12 form-control" type="password" [(ngModel)] = "newPassword" placeholder="Enter Password" required>
+        <input class="col-sm-12 form-control" type="password" [(ngModel)]="newPassword" placeholder="Enter Password"
+            required>
         <br>
         <label>Confirm Password:</label>
-        <input class="col-sm-12 form-control" type="password" [(ngModel)] = "confirmPassword" placeholder="Enter Password" required>
+        <input class="col-sm-12 form-control" type="password" [(ngModel)]="confirmPassword" placeholder="Enter Password"
+            required>
         <br>
-        <button class='btn btn-primary user-btn' id='register-btn'>Register</button>
+        <button class='btn btn-primary user-btn' id='register-btn' (click)="registerUser()">Register</button>
         <br>
         <br>
+        <h6 id="message">{{message}}</h6>
+        <br>
+    </div>
+    <div class='col-xl-4 login'>
+        <br>
+        <div class="login-btn">
+            <button class='btn btn-primary user-btn' id='return' routerLinkActive='active' routerLink=""
+                [hidden]="visible">Back to Login</button>
+        </div>
     </div>
 </div>
