@@ -18,7 +18,7 @@ export class TriviaService {
   }
 
   getRandomQuestion(randomNumber: number): Observable<Question> {
-    return this.http.post(this.ServerUrl + 'question', JSON.stringify(randomNumber)) as Observable<Question>;
+    return this.http.get(this.ServerUrl + 'trivia/' + randomNumber) as Observable<Question>;
   }
 
   getRandomStarWarsData(randomNumber: number): Observable<any> {
@@ -48,7 +48,7 @@ export class TriviaService {
   }
 
   enterScore(score: number) {
-    this.http.patch(this.ServerUrl + 'score', score);
+    this.http.post(this.ServerUrl + 'score', JSON.stringify(score));
   }
 
 }
