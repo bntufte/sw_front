@@ -8,12 +8,14 @@ import { NavBarService } from 'src/app/services/nav-bar.service';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
+
 export class LoginComponent implements OnInit {
 
   username: string;
   password: string;
   link: string = "";
   message : string = "";
+
 
   constructor(public nav: NavBarService, private login: LoginService) { }
 
