@@ -26,8 +26,8 @@ export class RegisterComponent implements OnInit {
   registerUser() {
     let newUser = new NewUser(this.newUsername, this.newPassword, this.confirmPassword);
     if (newUser.password === newUser.confirmPassword) {
-      let user = new User(this.newUsername, this.newPassword);
-      this.register.register(user).subscribe();//ask Tim about this.
+      let user = new User(0, this.newUsername, this.newPassword);
+      this.register.register(user).subscribe();
       this.message = "Registration Was Successful"
       this.visible = !this.visible;
     }else{
