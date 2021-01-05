@@ -1,1 +1,19 @@
-<p>reward works!</p>
+<div>
+
+    <h1>Congratulations! You have earned a new character!</h1>
+
+    <div id="reward-character">
+        <h3>Name: {{rewardPerson.name}}</h3>
+        <h5>Home Planet: {{rewardPerson.home_planet}}</h5>
+        <h5>Hair Color: {{rewardPerson.hair_color}}</h5>
+        <h5>Weapon: {{rewardPerson.weapon}}</h5>
+    </div>
+
+    <br>
+
+    <div id="btn-div">
+        <button (click)="sendToLeaderboard()">Go to Leaderboard</button>
+    </div>
+
+
+</div>

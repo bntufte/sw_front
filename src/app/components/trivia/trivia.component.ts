@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, RouterEvent, RouterLink, RouterLinkWithHref } from '@angular/router';
+// import { Router, RouterEvent, RouterLink, RouterLinkWithHref } from '@angular/router';
+import { Router } from "@angular/router";
 import { Observable } from 'rxjs';
 import { Question } from 'src/app/models/question';
 import { TriviaService } from 'src/app/services/trivia.service';
@@ -11,8 +12,10 @@ import { TriviaService } from 'src/app/services/trivia.service';
 })
 export class TriviaComponent implements OnInit {
 
-  public router: Router;
+  // public router: Router;
   public numberOfWrongQuestions: number = 0;
+  public winningStreak: number;
+  public hasEarnedReward: boolean = false;
   public score: number;
   public question: Question;
   public subject: string;
@@ -21,7 +24,7 @@ export class TriviaComponent implements OnInit {
   public isCorrect: boolean;
   public needNewQuestion: boolean;
 
-  constructor(public triv: TriviaService) { }
+  constructor(public triv: TriviaService, private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -65,13 +68,27 @@ export class TriviaComponent implements OnInit {
 
     if (document.getElementById("entered-answer").nodeValue == document.getElementById("entered-answer").nodeValue.toLowerCase()) {
       this.score ++;
+      this.winningStreak ++;
+
+      if (this.winningStreak === 6) {
+        this.hasEarnedReward = true;
+      }
+
       this.isCorrect = true;
       this.info = "Correct! You have earned 1 point"
     } else {
 
+      this.winningStreak = 0;
+
       if (this.numberOfWrongQuestions === 10) {
         this.triv.enterScore(this.score);
-        this.router.navigate(['/leaderboard']);
+        // this.router.navigate(['/leaderboard']);
+
+        if (this.hasEarnedReward === true) {
+          this.router.navigateByUrl("/reward");
+        } else {
+          this.router.navigateByUrl("/leaderboard");
+        }
       } else {
         this.isCorrect = false;
         this.info = "Sorry, Wrong Answer";
