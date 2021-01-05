@@ -13,6 +13,8 @@ export class LoginComponent implements OnInit {
   username : string;
   password : string;
   link : string = "";
+  userVer : User;
+
   //message : string = "";
 
   constructor(public nav : NavBarService, private login : LoginService) { }
@@ -23,8 +25,12 @@ export class LoginComponent implements OnInit {
 
   loginUser(){
     let user : User = new User(this.username, this.password);
-    this.login.sendCredentials(user).subscribe();
-    this.link = "welcome";
+    
+    this.login.sendCredentials(user).subscribe((response : User) => {this.userVer = response});
+    if (this.userVer != null)
+      this.link = "welcome";
+    else
+      this.link = ;
   }
 
 }
