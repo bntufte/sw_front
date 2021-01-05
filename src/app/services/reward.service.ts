@@ -22,8 +22,8 @@ export class RewardService {
     return this.http.get(this.SwapiUrl + 'people/' + randomNumber) as Observable<Person>;
   }
 
-  insertRewardCharacter(person: Person): Observable<boolean> {
-    return this.http.post(this.ServerUrl + 'reward', JSON.stringify(person)) as Observable<boolean>;
+  insertRewardCharacter(person: Person): Observable<any> {
+    return this.http.post(this.ServerUrl + 'reward', JSON.stringify(person)) as Observable<any>;
   }
 
 }

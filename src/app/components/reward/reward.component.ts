@@ -33,7 +33,7 @@ awardNewCharacter();
 
     this.rew.insertRewardCharacter(this.rewardPerson).subscribe(
       (response: any) => {
-        if (!response) {
+        if (response.status != 201) {
           this.info="Error. Your reward character could not be loaded."
         }
       }
