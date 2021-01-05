@@ -1,6 +1,5 @@
 export class User {
 
-<<<<<<< HEAD
     public username : string;
     public password : string;
 
@@ -9,8 +8,4 @@ export class User {
         this.username = username;
         this.password = password;
     }
-=======
-    constructor(public userid: number, public username: string, public password: string) { }
-
->>>>>>> trivia
 }
