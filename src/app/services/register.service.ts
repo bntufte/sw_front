@@ -13,6 +13,6 @@ export class RegisterService {
 
   register(user :  User) : Observable<boolean>{
     let body : User = user;
-    return this.http.post<boolean>('http://54.67.67.7:8085/StarWarsTrivia/', body);
+    return this.http.post<boolean>('http://54.67.67.7:8085/StarWarsTrivia/register', body);
   }
 }
