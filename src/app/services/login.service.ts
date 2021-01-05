@@ -9,11 +9,13 @@ import { Observable } from 'rxjs';
 })
 export class LoginService {
 
+  public userId : number;
+
   constructor(private http :  HttpClient) { }
 
   sendCredentials(user : User) : Observable<User>{
     let body : User = user;
-    return this.http.post<User>("http://54.67.67.7:8085/StarWarsTrivia/", body);
+    return this.http.post<User>("http://54.67.67.7:8085/StarWarsTrivia/login", body);
   }
 
 }
