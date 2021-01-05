@@ -1,19 +1,33 @@
-<div>
 
-    <h1>Congratulations! You have earned a new character!</h1>
+<br>
 
-    <div id="reward-character">
-        <h3>Name: {{rewardPerson.name}}</h3>
-        <h5>Home Planet: {{rewardPerson.home_planet}}</h5>
-        <h5>Hair Color: {{rewardPerson.hair_color}}</h5>
-        <h5>Weapon: {{rewardPerson.weapon}}</h5>
+<div class="container" id="reward-div">
+
+    <div class="col-xl-4">
+
+        <h1 style="color:yellow">Congratulations! You have earned a new character!</h1>
+
+        <div id="reward-character">
+            <h3>Name: {{rewardPerson.name}}</h3>
+            <h5>Hair Color: {{rewardPerson.hair_color}}</h5>
+            <h5>Eye Color: {{rewardPerson.eye_color}}</h5>
+            <h5>Birth Year: {{rewardPerson.birth_year}}</h5>
+        </div>
+
+
+        <br>
+
+        <div class="col-xl-4" id="btn-div">
+            <button class="btn" (click)="sendToLeaderboard()">Go to Leaderboard</button>
+        </div>
+
+        <div>
+            <p id="error">{{info}}</p>
+        </div>
+
     </div>
 
-    <br>
 
-    <div id="btn-div">
-        <button (click)="sendToLeaderboard()">Go to Leaderboard</button>
-    </div>
 
 
 </div>

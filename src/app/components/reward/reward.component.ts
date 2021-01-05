@@ -11,7 +11,7 @@ import { RewardService } from 'src/app/services/reward.service';
 export class RewardComponent implements OnInit {
 
   public rewardPerson: Person;
-  public info: string = "Congratulations! You've Earned a Reward!";
+  public info: string = "";
 
   constructor(private rew: RewardService, private router: Router) { }
 
@@ -33,10 +33,8 @@ awardNewCharacter();
 
     this.rew.insertRewardCharacter(this.rewardPerson).subscribe(
       (response: any) => {
-        if (response) {
-          //success
-        } else {
-          //fail
+        if (!response) {
+          this.info="Error. Your reward character could not be loaded."
         }
       }
     )

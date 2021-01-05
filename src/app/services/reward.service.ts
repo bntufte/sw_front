@@ -23,7 +23,7 @@ export class RewardService {
   }
 
   insertRewardCharacter(person: Person): Observable<boolean> {
-    return this.http.post(this.ServerUrl + 'reward', person) as Observable<boolean>;
+    return this.http.post(this.ServerUrl + 'reward', JSON.stringify(person)) as Observable<boolean>;
   }
 
 }
