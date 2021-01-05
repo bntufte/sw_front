@@ -1,0 +1,37 @@
+<div id="trivia-div" class="container">
+
+    <div id="notice" class="col-xl-4">
+        <label for="notice-list">Remember:</label>
+        <ul id="notice-list">
+            <li>You will be asked a series of questions about the Star Wars Universe</li>
+            <li>Each question is worth 1 point</li>
+            <li>10 wrong answers ends the trivia session</li>
+            <li>If your score is high enough, you may place onto the Leaderboard</li>
+            <li>Have fun and May the Force by With You!</li>
+        </ul> 
+    </div>
+
+    <hr>
+ 
+
+    <div class="form-group col-xl-4">
+        <div id="question">
+            <p id="question">{{subject}} {{question.question}}</p>
+            <!-- <p id="question">QUESTION</p> -->
+        </div>
+
+        <div>
+            <label for="entered-answer" id="entered-answer-label">Enter Your Answer:</label>
+            <input type="text" id="entered-answer" class="form-control">
+            <button class="btn" type="button" (click)="checkAnswer()" id="submit-btn">Submit Answer</button>
+            <button *ngIf="needNewQuestion" class="btn" type="button" id="new-question" (click)="getQuestion()">Next Question</button>
+        </div>
+    </div>
+
+    <div>
+        <p [id]="isCorrect">{{info}}</p>
+        <!-- <p [id]="isCorrect">INFO</p> -->
+    </div>  
+
+</div>
+
