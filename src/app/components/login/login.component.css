@@ -1,11 +1,10 @@
 .login{
     margin:auto;
 }
-/* 
-#new-user{
-    width: 40%;
-    float: left;
-} */
+
+.message{
+    text-align: center;
+}
 
 .register-btn{
     width: 67%;
