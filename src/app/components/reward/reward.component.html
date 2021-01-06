@@ -7,6 +7,12 @@
 
         <h1 style="color:yellow">Congratulations! You have earned a new character!</h1>
 
+        <div class="col-xl-4">
+            <button class="btn" (click)="awardNewCharacter()" *ngIf="doesNotHaveReward">Get Reward</button>
+        </div>
+
+        <br>
+        
         <div id="reward-character">
             <h3>Name: {{rewardPerson.name}}</h3>
             <h5>Hair Color: {{rewardPerson.hair_color}}</h5>

@@ -10,6 +10,7 @@ import { RewardService } from 'src/app/services/reward.service';
 })
 export class RewardComponent implements OnInit {
 
+  public doesNotHaveReward: boolean = true;
   public rewardPerson: Person;
   public info: string = "";
 
@@ -22,16 +23,17 @@ export class RewardComponent implements OnInit {
     this.router.navigateByUrl("/leaderboard");
   }
 
-awardNewCharacter();
-
   awardNewCharacter() {
     this.rew.getRewardCharacter().subscribe(
     (response: any) => {
       this.rewardPerson = response;
+      console.log(this.rewardPerson);
     }
   );
 
-    this.rew.insertRewardCharacter(this.rewardPerson).subscribe(
+  this.doesNotHaveReward = false;
+
+    this.rew.insertRewardCharacter().subscribe(
       (response: any) => {
         if (response.status != 201) {
           this.info="Error. Your reward character could not be loaded."
