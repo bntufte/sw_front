@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {}
+import { ScoresService } from 'src/app/services/scores.service';
+import { Score } from 'src/app/models/Score';
+
 
 @Component({
   selector: 'app-scoreboard',
@@ -9,17 +11,27 @@ import {}
 export class ScoreboardComponent implements OnInit {
 
   score: BigInteger;
-  username: string;
+  user: BigInteger;
   date:Date;
-  scoreList
+  scoreList:Score[];
 
-  constructor( private svc: ) { }
+  constructor( private svc:ScoresService) { }
 
   ngOnInit(): void {
     this.getScores();
   }
   getScores(){
-    this.svc.getScores();
+    this.scoreList= this.svc.getALLScores().subscribe(
+      (response: any) => {
+      
+      this.scoreList =response;
+      
+      
+
+    }
+  );
+
   }
+
 
 }
