@@ -1,12 +1,20 @@
 <div>
-    <table id=scoreboard>
-        <tr>
-            <th>User</th>
-            <th>Score</th>
-            <th>Date</th>
-        </tr>
-
-
+    <table >
+        <thead>
+            <tr>
+                <th>SCORE</th>
+                <th>USER NAME</th>
+                <th>DATE</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let u of s.scores">
+                <td>{{u.score}}</td>
+                <td>{{u.username}}</td>
+                <td>{{u.date}}</td>
+            </tr>
+        </tbody>
     </table>
 
 </div>

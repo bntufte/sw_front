@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {}
 
 @Component({
   selector: 'app-scoreboard',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ScoreboardComponent implements OnInit {
 
-  constructor() { }
+  score: BigInteger;
+  username: string;
+  date:Date;
+  scoreList
+
+  constructor( private svc: ) { }
 
   ngOnInit(): void {
+    this.getScores();
+  }
+  getScores(){
+    this.svc.getScores();
   }
 
 }
