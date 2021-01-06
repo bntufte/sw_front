@@ -9,7 +9,8 @@ import { BannerComponent } from './components/banner/banner.component';
 import { RegisterComponent } from './components/register/register.component';
 import { FormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
-import { ScoreboardComponent } from './components/scoreboard/scoreboard.component';//needed to import manually for HttpClientModule
+import { ScoreboardComponent } from './components/scoreboard/scoreboard.component';
+import { WelcomepageComponent } from './components/welcomepage/welcomepage.component';//needed to import manually for HttpClientModule
 //import { TriviaComponent } from './components/trivia/trivia.component';
 
 
@@ -21,6 +22,7 @@ import { ScoreboardComponent } from './components/scoreboard/scoreboard.componen
     BannerComponent,
     RegisterComponent,
     ScoreboardComponent,
+    WelcomepageComponent,
    // TriviaComponent
   ],
   imports: [
