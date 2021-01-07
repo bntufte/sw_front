@@ -48,7 +48,6 @@ export class TriviaService {
   enterScore(scoreNumber: number) {
 
     let date: Date = new Date();
-
     let score = (this.loginComponent.login.userId, scoreNumber, date);
 
     this.http.post(this.ServerUrl + 'score', JSON.stringify(score));

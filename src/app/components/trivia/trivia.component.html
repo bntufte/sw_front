@@ -8,7 +8,6 @@
             <li>You will be asked a series of questions about the Star Wars Universe</li>
             <li>Each question is worth 1 point</li>
             <li>10 wrong answers ends the trivia session</li>
-            <!-- <li>Requesting another question while the current question is unanswered will be considered a wrong answer</li> -->
             <li>If your score is high enough, you may place onto the Leaderboard</li>
             <li>Have fun and May the Force be With You!</li>
         </ul> 
@@ -20,7 +19,6 @@
     <div class="form-group col-xl-4">
         <div id="question">
             <p id="question">{{subject | titlecase}} {{question.question}}</p>
-            <!-- <p id="question">QUESTION</p> -->
         </div>
 
         <div id="answer-div">
@@ -32,7 +30,6 @@
 
         <div>
             <p [id]="isCorrect">{{info}}</p>
-            <!-- <p [id]="isCorrect">INFO</p> -->
         </div>  
 
     </div>
