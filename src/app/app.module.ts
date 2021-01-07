@@ -10,7 +10,8 @@ import { RegisterComponent } from './components/register/register.component';
 import { FormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import { RewardComponent } from './components/reward/reward.component';//needed to import manually for HttpClientModule
-//import { TriviaComponent } from './components/trivia/trivia.component';
+import { TriviaComponent } from './components/trivia/trivia.component';
+import { CommonModule } from '@angular/common';
 
 
 @NgModule({
@@ -21,7 +22,7 @@ import { RewardComponent } from './components/reward/reward.component';//needed 
     BannerComponent,
     RegisterComponent,
     RewardComponent,
-   // TriviaComponent
+    TriviaComponent
   ],
   imports: [
     BrowserModule,
@@ -30,7 +31,7 @@ import { RewardComponent } from './components/reward/reward.component';//needed 
     HttpClientModule,
     BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [LoginComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

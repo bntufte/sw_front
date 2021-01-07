@@ -2,9 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Person } from '../models/person';
 import { HttpClient } from '@angular/common/http';
-import { LoginService } from './login.service';
 import { LoginComponent } from '../components/login/login.component';
-import { PersonReward } from '../models/person-reward';
 
 @Injectable({
   providedIn: 'root'
@@ -29,9 +27,7 @@ export class RewardService {
 
   insertRewardCharacter(): Observable<any> {
 
-    let p: PersonReward;
-    p.personid = this.randomNumber;
-    p.user_id = this.loginComponent.login.userId;
+    let p = (this.randomNumber, this.loginComponent.login.userId);
 
     return this.http.post(this.ServerUrl + 'reward', JSON.stringify(p)) as Observable<any>;
   }
