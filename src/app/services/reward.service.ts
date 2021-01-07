@@ -3,13 +3,16 @@ import { Observable } from 'rxjs';
 import { Person } from '../models/person';
 import { HttpClient } from '@angular/common/http';
 import { LoginComponent } from '../components/login/login.component';
+import { PersonReward } from '../models/person-reward';
+import { User } from '../models/user';
 
 @Injectable({
   providedIn: 'root'
 })
 export class RewardService {
 
-  private ServerUrl: string = 'http://54.67.67.7:8085/StarWarsTrivia/';
+  // private ServerUrl: string = 'http://54.67.67.7:8085/StarWarsTrivia/';
+  private ServerUrl: string = 'http://localhost:8080/StarWarsTrivia/';
   private SwapiUrl: string = 'https://swapi.dev/api/';
 
   public randomNumber: number;
@@ -27,9 +30,11 @@ export class RewardService {
 
   insertRewardCharacter(): Observable<any> {
 
-    let p = (this.randomNumber, this.loginComponent.login.userId);
+    // let p = (this.randomNumber, this.loginComponent.login.userId);
 
-    return this.http.post(this.ServerUrl + 'reward', JSON.stringify(p)) as Observable<any>;
+    let personReward: PersonReward = new PersonReward(this.randomNumber, new User(this.loginComponent.login.userId, null, null));
+
+    return this.http.post(this.ServerUrl + 'reward', personReward) as Observable<any>;
   }
 
 }

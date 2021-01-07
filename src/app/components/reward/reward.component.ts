@@ -11,7 +11,7 @@ import { RewardService } from 'src/app/services/reward.service';
 export class RewardComponent implements OnInit {
 
   public doesNotHaveReward: boolean = true;
-  public rewardPerson: Person;
+  public rewardPerson: Person = new Person("", 0, 0, "", "", "", "", "");
   public info: string = "";
 
   constructor(private rew: RewardService, private router: Router) { }
@@ -20,7 +20,7 @@ export class RewardComponent implements OnInit {
   }
 
   sendToLeaderboard() {
-    this.router.navigateByUrl("/leaderboard");
+    this.router.navigateByUrl("/score");
   }
 
   awardNewCharacter() {

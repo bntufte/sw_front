@@ -1,5 +1,7 @@
+import { User } from "./user";
+
 export class PersonReward {
 
-    constructor(public personid: number, public user_id: number) { }
+    constructor(public personid: number, public user: User) { }
 
 }
