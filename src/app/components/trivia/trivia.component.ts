@@ -15,9 +15,9 @@ export class TriviaComponent implements OnInit {
   public winningStreak: number = 0;
   public hasEarnedReward: boolean = false;
   public score: number = 0;
-  public question: Question;
+  public question: Question = new Question(0, "", "");
   public subject: string;
-  public answer: string;
+  public answer: any;
   public info: string;
   public isCorrect: boolean;
   public answeredCurrentQuestion: boolean = false;
@@ -46,7 +46,7 @@ export class TriviaComponent implements OnInit {
     this.submittedAnswer = false;
     this.info = "";
   
-    let randomNumber: number = this.triv.getRandomInt(25) + 1;
+    let randomNumber: number = (this.triv.getRandomInt(23)) + 1;
 
     try {
         this.triv.getRandomQuestion(randomNumber).subscribe(
@@ -60,8 +60,8 @@ export class TriviaComponent implements OnInit {
     }
 
     
-
-    this.triv.getRandomStarWarsData(randomNumber).subscribe(
+    try {
+this.triv.getRandomStarWarsData(randomNumber).subscribe(
       (response: any) => {
 
         if (response.name != null) {
@@ -69,7 +69,7 @@ export class TriviaComponent implements OnInit {
         } else {
           this.subject = response.title;
         }  
-        //console.log(this.subject);
+        // console.log(this.subject);
         
         if (randomNumber === 1) {
           this.answer = response.height;
@@ -120,10 +120,15 @@ export class TriviaComponent implements OnInit {
         } else {
           this.answer = null;
         }
-        //console.log(this.answer);
+        // console.log(this.answer);
 
       }
     );
+    } catch (error) {
+      console.log("error");
+      this.needNewQuestion = true;
+    }
+    
 
   }
 
@@ -131,7 +136,7 @@ export class TriviaComponent implements OnInit {
     this.submittedAnswer = true;
     this.needNewQuestion = true;
 
-    if (this.playerAnswer.toLowerCase() === this.answer) {
+    if (this.playerAnswer == this.answer) {
       this.score += 1;
       this.winningStreak += 1;
 

@@ -35,7 +35,14 @@ export class TriviaService {
       return this.http.get(this.SwapiUrl + 'planets/' + randomPlanet);
     } else if (randomNumber === 18 || randomNumber === 19 || randomNumber === 20 || randomNumber === 21 || randomNumber === 22 || randomNumber === 23) {
       let randomStarship:number = this.getRandomInt(36) + 1;
-      return this.http.get(this.SwapiUrl + 'starships/' + randomStarship);
+
+      if (randomStarship != 1 && randomStarship != 4 && randomStarship != 6 && randomStarship != 7 && randomStarship != 8 && randomStarship != 14 && randomStarship != 16 && randomStarship != 18 && randomStarship != 19 && randomStarship != 20 && randomStarship != 24 && randomStarship != 25 && randomStarship != 26 && randomStarship != 30 && randomStarship != 33 && randomStarship != 34 && randomStarship != 35 && randomStarship != 36) {
+        return this.http.get(this.SwapiUrl + 'starships/' + randomStarship);
+      } else {
+        randomStarship = 15;
+        return this.http.get(this.SwapiUrl + 'starships/' + randomStarship);
+      }
+      
     } else if (randomNumber === 15 || randomNumber === 16 || randomNumber === 17) {
       let randomFilm:number = this.getRandomInt(6) + 1;
       return this.http.get(this.SwapiUrl + 'films/' + randomFilm);
