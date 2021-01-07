@@ -33,6 +33,7 @@ export class LoginComponent implements OnInit {
         if (userInfo != null) {
           this.login.userId = userInfo.userId;
           this.login.username = userInfo.username;
+          console.log(userInfo);
           //this.message = "Login Was Successful";
           //this.link = "home";
           this.router.navigateByUrl("/home");
@@ -41,9 +42,10 @@ export class LoginComponent implements OnInit {
           console.log("null observable");
         }
       },
-      () => {
+      (err) => {
         //status code 500 or 400
-        console.log("error status code during login")
+        console.log("error status code during login");
+        console.log(err);
         this.message = "Incorrect Username or Password";      }
     );
 
