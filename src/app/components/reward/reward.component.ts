@@ -13,7 +13,7 @@ export class RewardComponent implements OnInit {
 
   public userInfo: User;
   public doesNotHaveReward: boolean = true;
-  public rewardPerson: Person = new Person("", 0, 0, "", "", "", "", "");
+  public rewardPerson: Person = new Person("", "", "", "", "", "", "", "");
   public info: string = "";
 
   constructor(private rew: RewardService, private router: Router) { }
