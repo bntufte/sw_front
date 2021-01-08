@@ -28,7 +28,7 @@ export class ProfileComponent implements OnInit {
   constructor(private profile: ProfileService, public login: LoginService, public loginComponent : LoginComponent, public cookieService : CookieService) { }
 
   ngOnInit(): void {
-    // this.showShowcase();
+    this.showShowcase();
   }
 
   updateUser() {
