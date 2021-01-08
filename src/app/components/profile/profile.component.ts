@@ -31,9 +31,9 @@ export class ProfileComponent implements OnInit {
         () => {
           this.message = "Password Changed";
         },
-        (error) => {
+        (err) => {
           this.message = "Password Was Not Changed";
-          console.log(error);
+          console.log(err);
         }
 
       );
