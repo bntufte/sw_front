@@ -8,10 +8,8 @@ import { LoginComponent } from './components/login/login.component';
 import { BannerComponent } from './components/banner/banner.component';
 import { RegisterComponent } from './components/register/register.component';
 import { FormsModule } from '@angular/forms';
-import {HttpClientModule} from '@angular/common/http';
-import { ScoreboardComponent } from './components/scoreboard/scoreboard.component';
-import { WelcomepageComponent } from './components/welcomepage/welcomepage.component';//needed to import manually for HttpClientModule
 
+import {HttpClientModule} from '@angular/common/http';//needed to import manually for HttpClientModule
 import { HomeComponent } from './components/home/home.component';
 import { ProfileComponent } from './components/profile/profile.component';
 
@@ -27,12 +25,11 @@ import { CommonModule } from '@angular/common';
     LoginComponent,
     BannerComponent,
     RegisterComponent,
-    ScoreboardComponent,
-    WelcomepageComponent,
     HomeComponent,
     ProfileComponent,
     RewardComponent,
     TriviaComponent
+   
   ],
   imports: [
     BrowserModule,
