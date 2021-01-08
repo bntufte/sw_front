@@ -11,6 +11,7 @@ import { FormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';//needed to import manually for HttpClientModule
 import { HomeComponent } from './components/home/home.component';
 import { ProfileComponent } from './components/profile/profile.component';
+
 //import { TriviaComponent } from './components/trivia/trivia.component';
 
 
