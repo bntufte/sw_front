@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class NavBarService {
   
-  private ServerUrl: string = 'http://54.67.67.7:8085/StarWarsTrivia/';
+  private ServerUrl: string = 'http://localhost:8069/StarWarsTrivia/';
   public visible: boolean;
 
   constructor(private http: HttpClient) { 
@@ -15,6 +15,10 @@ export class NavBarService {
 
   hide() {
     this.visible = false;
+  }
+
+  show() {
+    this.visible = true;
   }
 
   endSession() {
