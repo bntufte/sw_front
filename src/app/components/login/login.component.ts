@@ -19,7 +19,7 @@ export class LoginComponent implements OnInit {
   message: string = "";
 
 
-  constructor(public nav: NavBarService, private login: LoginService, private router : Router) { }
+  constructor(public nav: NavBarService, public login: LoginService, private router : Router) { }
 
   ngOnInit(): void {
     this.nav.hide();

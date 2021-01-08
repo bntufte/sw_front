@@ -9,8 +9,10 @@ import { BannerComponent } from './components/banner/banner.component';
 import { RegisterComponent } from './components/register/register.component';
 import { FormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
+import { RewardComponent } from './components/reward/reward.component';//needed to import manually for HttpClientModule
+import { TriviaComponent } from './components/trivia/trivia.component';
+import { CommonModule } from '@angular/common';
 import { HomeComponent } from './components/home/home.component';//needed to import manually for HttpClientModule
-//import { TriviaComponent } from './components/trivia/trivia.component';
 
 
 @NgModule({
@@ -20,8 +22,9 @@ import { HomeComponent } from './components/home/home.component';//needed to imp
     LoginComponent,
     BannerComponent,
     RegisterComponent,
-    HomeComponent,
-   // TriviaComponent
+    RewardComponent,
+    TriviaComponent
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -30,7 +33,7 @@ import { HomeComponent } from './components/home/home.component';//needed to imp
     HttpClientModule,
     BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [LoginComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
