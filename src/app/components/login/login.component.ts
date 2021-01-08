@@ -4,6 +4,7 @@ import { User } from 'src/app/models/user';
 import { UserInfo } from 'src/app/models/user-info';
 import { LoginService } from 'src/app/services/login.service';
 import { NavBarService } from 'src/app/services/nav-bar.service';
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-login',
@@ -11,15 +12,18 @@ import { NavBarService } from 'src/app/services/nav-bar.service';
   styleUrls: ['./login.component.css']
 })
 
-export class LoginComponent implements OnInit {
 
+
+export class LoginComponent implements OnInit {  
+  userNumber : number;
+  userId : number;
   username: string;
   password: string;
   //link: string = "";
   message: string = "";
 
 
-  constructor(public nav: NavBarService, public login: LoginService, private router : Router) { }
+  constructor(public nav: NavBarService, public login: LoginService, private router : Router, public cookieService : CookieService) { }
 
   ngOnInit(): void {
     this.nav.hide();
@@ -32,6 +36,8 @@ export class LoginComponent implements OnInit {
         //logic done if logged in successful with a 200 status code
         if (userInfo != null) {
           this.login.userId = userInfo.userId;
+          this.userId = userInfo.userId;
+          this.cookieService.set( 'userId', <string><unknown>userInfo.userId);               
           this.login.username = userInfo.username;
           console.log(userInfo);
           //this.message = "Login Was Successful";

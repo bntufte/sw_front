@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
+import { CookieService } from 'ngx-cookie-service';
 import { NewUser } from 'src/app/models/new-user';
 import { Person } from 'src/app/models/person';
 import { Showcase } from 'src/app/models/showcase';
 import { User } from 'src/app/models/user';
 import { LoginService } from 'src/app/services/login.service';
 import { ProfileService } from 'src/app/services/profile.service';
+import { LoginComponent } from '../login/login.component';
 
 @Component({
   selector: 'app-profile',
@@ -23,10 +25,10 @@ export class ProfileComponent implements OnInit {
   rewardPerson3: Person = null;
   rewardPerson4: Person = null;
 
-  constructor(private profile: ProfileService, public login: LoginService) { }
+  constructor(private profile: ProfileService, public login: LoginService, public loginComponent : LoginComponent, public cookieService : CookieService) { }
 
   ngOnInit(): void {
-    this.showShowcase();
+    // this.showShowcase();
   }
 
   updateUser() {
@@ -60,8 +62,9 @@ export class ProfileComponent implements OnInit {
 
   }
 
-  showShowcase() {
-    let currentUser: number = this.login.userId;
+  showShowcase() {   
+    let currentUser: number = <number><unknown>this.cookieService.get('userId');
+    console.log(currentUser);
     this.profile.getShowcase(currentUser).subscribe(
       (response: Showcase) => {
         this.showcase = response;

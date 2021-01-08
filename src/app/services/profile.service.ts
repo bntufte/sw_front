@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { User } from '../models/user';
-import { LoginService } from './login.service';
 import { Showcase } from '../models/showcase';
 import { Person } from '../models/person';
 
@@ -11,17 +10,17 @@ import { Person } from '../models/person';
 })
 export class ProfileService {
 
-  public userId : number = this.login.userId;
+  
   private SwapAPI : string = "https://swapi.dev/api/";
 
-  constructor(private http :  HttpClient, public login : LoginService) { }
+  constructor(private http :  HttpClient) { }
 
   updateProfile(user : User) : Observable<any>{
-    return this.http.put<any>("http://localhost:8069/StarWarsTrivia/login/update", user);
+    return this.http.put<any>("http://localhost:8069/StarWarsTrivia/login/update/", user);
   }
 
-  getShowcase(userId) : Observable<Showcase>{
-    return this.http.get<Showcase>("http://localhost:8069/StarWarsTrivia/showcase" + userId);
+  getShowcase(userId : number) : Observable<Showcase>{
+    return this.http.get<Showcase>("http://localhost:8069/StarWarsTrivia/showcase/" + userId);
   }
 
   getCharacter(personId : number) : Observable<Person>{

@@ -71,7 +71,7 @@ this.triv.getRandomStarWarsData(randomNumber).subscribe(
         } else {
           this.subject = response.title;
         }  
-        // console.log(this.subject);
+        console.log(this.subject);
         
         if (randomNumber === 1) {
           this.answer = response.height;
@@ -122,7 +122,7 @@ this.triv.getRandomStarWarsData(randomNumber).subscribe(
         } else {
           this.answer = null;
         }
-        // console.log(this.answer);
+        console.log(this.answer);
 
       }
     );
