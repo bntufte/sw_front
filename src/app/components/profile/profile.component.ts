@@ -7,7 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfileComponent implements OnInit {
 
-  constructor() { }
+  oldPassword : string;
+  newPassword : string;
+  confirmPassword : string;
+
+  constructor(private profile : ProfileComponent) { }
 
   ngOnInit(): void {
   }

@@ -8,9 +8,9 @@ import { LoginComponent } from './components/login/login.component';
 import { BannerComponent } from './components/banner/banner.component';
 import { RegisterComponent } from './components/register/register.component';
 import { FormsModule } from '@angular/forms';
-import {HttpClientModule} from '@angular/common/http';
+import {HttpClientModule} from '@angular/common/http';//needed to import manually for HttpClientModule
 import { HomeComponent } from './components/home/home.component';
-import { ProfileComponent } from './compontent/profile/profile.component';//needed to import manually for HttpClientModule
+import { ProfileComponent } from './components/profile/profile.component';
 //import { TriviaComponent } from './components/trivia/trivia.component';
 
 
@@ -22,7 +22,7 @@ import { ProfileComponent } from './compontent/profile/profile.component';//need
     BannerComponent,
     RegisterComponent,
     HomeComponent,
-    ProfileComponent,
+    ProfileComponent
    // TriviaComponent
   ],
   imports: [
