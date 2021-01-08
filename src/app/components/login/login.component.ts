@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { User } from 'src/app/models/user';
+import { UserInfo } from 'src/app/models/user-info';
 import { LoginService } from 'src/app/services/login.service';
 import { NavBarService } from 'src/app/services/nav-bar.service';
 
@@ -13,29 +15,38 @@ export class LoginComponent implements OnInit {
 
   username: string;
   password: string;
-  link: string = "";
-  message : string = "";
+  //link: string = "";
+  message: string = "";
 
 
-  constructor(public nav: NavBarService, public login: LoginService) { }
+  constructor(public nav: NavBarService, public login: LoginService, private router : Router) { }
 
   ngOnInit(): void {
     this.nav.hide();
   }
 
   loginUser() {
-    let user: User = new User(0, this.username, this.password);
+    let user: User = new User(this.username, this.password);
     this.login.sendCredentials(user).subscribe(
-      (userInfo : User) => {
+      (userInfo: UserInfo) => {
         //logic done if logged in successful with a 200 status code
-        this.login.userId = userInfo.userId;
-        this.link = "welcome";
-        this.message = "Login Was Successful";
+        if (userInfo != null) {
+          this.login.userId = userInfo.userId;
+          this.login.username = userInfo.username;
+          console.log(userInfo);
+          //this.message = "Login Was Successful";
+          //this.link = "home";
+          this.router.navigateByUrl("/home");
+        } else {
+          this.message = "Incorrect Username or Password";
+          console.log("null observable");
+        }
       },
-      () => {
+      (err) => {
         //status code 500 or 400
-        this.message = "Incorrect Username or Password";
-      }
+        console.log("error status code during login");
+        console.log(err);
+        this.message = "Incorrect Username or Password";      }
     );
 
   }

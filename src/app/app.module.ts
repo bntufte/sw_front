@@ -12,6 +12,7 @@ import {HttpClientModule} from '@angular/common/http';
 import { RewardComponent } from './components/reward/reward.component';//needed to import manually for HttpClientModule
 import { TriviaComponent } from './components/trivia/trivia.component';
 import { CommonModule } from '@angular/common';
+import { HomeComponent } from './components/home/home.component';//needed to import manually for HttpClientModule
 
 
 @NgModule({
@@ -23,6 +24,7 @@ import { CommonModule } from '@angular/common';
     RegisterComponent,
     RewardComponent,
     TriviaComponent
+    HomeComponent
   ],
   imports: [
     BrowserModule,

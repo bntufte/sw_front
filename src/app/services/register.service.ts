@@ -11,8 +11,8 @@ export class RegisterService {
   constructor(private http : HttpClient) { 
   }
 
-  register(user :  User) : Observable<boolean>{
+  register(user :  User) : Observable<any>{
     let body : User = user;
-    return this.http.post<boolean>('http://54.67.67.7:8085/StarWarsTrivia/', body);
+    return this.http.post<any>('http://localhost:8080/StarWarsTrivia/register', body);
   }
 }
