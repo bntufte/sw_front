@@ -16,7 +16,10 @@ export class ProfileComponent implements OnInit {
   newPassword: string;
   confirmPassword: string;
   message: string = "";
-  rewardPerson : Person[];
+  rewardPerson1 : Person;
+  rewardPerson2 : Person;
+  rewardPerson3 : Person;
+  rewardPerson4 : Person;
 
   constructor(private profile: ProfileService, public login: LoginService) { }
 
