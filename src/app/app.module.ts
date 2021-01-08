@@ -26,7 +26,7 @@ import { CommonModule } from '@angular/common';
     BannerComponent,
     RegisterComponent,
     HomeComponent,
-    ProfileComponent,  
+    ProfileComponent,
     RewardComponent,
     TriviaComponent
    

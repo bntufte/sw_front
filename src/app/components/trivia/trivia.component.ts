@@ -28,8 +28,10 @@ export class TriviaComponent implements OnInit {
 
   ngOnInit(): void {
     this.needNewQuestion = true;
-
+    // this.nav.hide();
   }
+
+ 
 
   needQ(): boolean {
 
