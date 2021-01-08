@@ -1,3 +1,5 @@
+<br>
+
 <div id="trivia-div" class="container">
 
     <div id="notice" class="col-xl-4">
@@ -7,7 +9,7 @@
             <li>Each question is worth 1 point</li>
             <li>10 wrong answers ends the trivia session</li>
             <li>If your score is high enough, you may place onto the Leaderboard</li>
-            <li>Have fun and May the Force by With You!</li>
+            <li>Have fun and May the Force be With You!</li>
         </ul> 
     </div>
 
@@ -16,22 +18,23 @@
 
     <div class="form-group col-xl-4">
         <div id="question">
-            <p id="question">{{subject}} {{question.question}}</p>
-            <!-- <p id="question">QUESTION</p> -->
+            <p id="question">{{subject | titlecase}} {{question.question}}</p>
+        </div>
+
+        <div id="answer-div">
+            <label for="entered-answer" id="entered-answer-label">Enter Your Answer:</label>
+            <input type="text" id="entered-answer" class="form-control" [(ngModel)]="playerAnswer">
+            <button [disabled]="submittedAnswer" class="btn" type="button" (click)="checkAnswer()" id="submit-btn">Submit Answer</button>
+            <button [disabled]="!needNewQuestion" class="btn" type="button" id="new-question" (click)="getQuestion()">Get Question</button>
         </div>
 
         <div>
-            <label for="entered-answer" id="entered-answer-label">Enter Your Answer:</label>
-            <input type="text" id="entered-answer" class="form-control">
-            <button class="btn" type="button" (click)="checkAnswer()" id="submit-btn">Submit Answer</button>
-            <button *ngIf="needNewQuestion" class="btn" type="button" id="new-question" (click)="getQuestion()">Next Question</button>
-        </div>
-    </div>
+            <p [id]="isCorrect">{{info}}</p>
+        </div>  
 
-    <div>
-        <p [id]="isCorrect">{{info}}</p>
-        <!-- <p [id]="isCorrect">INFO</p> -->
-    </div>  
+    </div>
 
 </div>
 
+<br>
+<br>
