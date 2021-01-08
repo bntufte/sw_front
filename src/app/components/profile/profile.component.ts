@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NewUser } from 'src/app/models/new-user';
 import { Person } from 'src/app/models/person';
+import { Showcase } from 'src/app/models/showcase';
 import { User } from 'src/app/models/user';
 import { LoginService } from 'src/app/services/login.service';
 import { ProfileService } from 'src/app/services/profile.service';
@@ -16,14 +17,16 @@ export class ProfileComponent implements OnInit {
   newPassword: string;
   confirmPassword: string;
   message: string = "";
-  rewardPerson1 : Person;
-  rewardPerson2 : Person;
-  rewardPerson3 : Person;
-  rewardPerson4 : Person;
+  showcase: Showcase;
+  rewardPerson1: Person = null;
+  rewardPerson2: Person = null;
+  rewardPerson3: Person = null;
+  rewardPerson4: Person = null;
 
   constructor(private profile: ProfileService, public login: LoginService) { }
 
   ngOnInit(): void {
+    this.showShowcase();
   }
 
   updateUser() {
@@ -50,11 +53,50 @@ export class ProfileComponent implements OnInit {
         }
       },
       (err) => {
-          this.message = "Incorrect Username or Password";
-          console.log(err);
+        this.message = "Incorrect Username or Password";
+        console.log(err);
       }
     );
 
   }
 
+  showShowcase() {
+    let currentUser: number = this.login.userId;
+    this.profile.getShowcase(currentUser).subscribe(
+      (response: Showcase) => {
+        this.showcase = response;
+        this.profile.getCharacter(this.showcase.people1).subscribe(
+          (response: any) => {
+            this.rewardPerson1 = response;
+          }
+        );
+        this.profile.getCharacter(this.showcase.people2).subscribe(
+          (response: any) => {
+            this.rewardPerson2 = response;
+          }
+        );
+        this.profile.getCharacter(this.showcase.people3).subscribe(
+          (response: any) => {
+            this.rewardPerson3 = response;
+          }
+        );
+        this.profile.getCharacter(this.showcase.people4).subscribe(
+          (response: any) => {
+            this.rewardPerson4 = response;
+          }
+        );
+      },
+      (err) => {
+        console.log("Could not find showcase")
+        console.log(err);
+      }
+
+    );
+  }
+
 }
+
+// getRewardCharacter(): Observable<Person> {
+//   this.randomNumber = this.getRandomInt(82 + 1);
+//   return this.http.get(this.SwapiUrl + 'people/' + this.randomNumber) as Observable<Person>;
+// }
