@@ -11,6 +11,8 @@ import { RegisterService } from 'src/app/services/register.service';
 })
 export class RegisterComponent implements OnInit {
 
+  usernameTaken: boolean = false;
+  userArr: User[];
   newUsername: string;
   newPassword: string;
   confirmPassword: string;
@@ -25,21 +27,51 @@ export class RegisterComponent implements OnInit {
 
   registerUser() {
     let newUser = new NewUser(this.newUsername, this.newPassword, this.confirmPassword);
-    if (newUser.password === newUser.confirmPassword) {
-      let user = new User(this.newUsername, this.newPassword);
-      this.register.register(user).subscribe(
-        () => {
-          this.message = "Registration Was Successful"
-          this.visible = !this.visible;
-        },
-        () => {
-          this.message = "Registration Failed"
-        }
-      );
-    } else {
-      this.message = "Your Passwords Did Not Match";
-      console.log("Passwords do not match.")
-    }
+
+    this.register.checkIfUsernameAlreadyExists().subscribe(
+      (response: User[]) => {
+        this.userArr = response;
+        //this.userArr.forEach(element => {
+
+           this.userArr.forEach(element => {
+               if (element.username === this.newUsername) {
+              console.log("in loop");
+              this.usernameTaken = true;
+            }
+             
+           });
+
+           console.log(this.usernameTaken);
+
+           if (!this.usernameTaken) {
+     
+             if (newUser.password === newUser.confirmPassword) {
+               let user = new User(this.newUsername, this.newPassword);
+               this.register.register(user).subscribe(
+                 () => {
+                   this.message = "Registration Was Successful"
+                   this.visible = !this.visible;
+                 },
+                 () => {
+                   this.message = "Registration Failed"
+                 }
+               );
+             } else {
+               this.message = "Your Passwords Did Not Match";
+               console.log("Passwords do not match.")
+             }
+     
+           } else {
+             this.message = "Username already taken";
+             console.log("Username already taken")
+           }
+
+           
+      }
+    );
+
+ 
+
   }
 
 

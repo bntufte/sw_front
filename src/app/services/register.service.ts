@@ -11,8 +11,12 @@ export class RegisterService {
   constructor(private http : HttpClient) { 
   }
 
+  checkIfUsernameAlreadyExists(): Observable<User[]> {
+    return this.http.get('http://localhost:8080/StarWarsTrivia/register') as Observable<User[]>;
+  }
+
   register(user :  User) : Observable<any>{
     let body : User = user;
-    return this.http.post<any>('http://localhost:8069/StarWarsTrivia/register', body);
+    return this.http.post<any>('http://localhost:8080/StarWarsTrivia/register', body);
   }
 }

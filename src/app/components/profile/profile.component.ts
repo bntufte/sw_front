@@ -32,7 +32,7 @@ export class ProfileComponent implements OnInit {
   }
 
   updateUser() {
-    let currentUser: string = this.login.username;
+    let currentUser: string = this.cookieService.get('username');
     console.log(currentUser);
     let updateUser = new NewUser(currentUser, this.newPassword, this.confirmPassword);
     let user = new User(this.login.username, this.newPassword);

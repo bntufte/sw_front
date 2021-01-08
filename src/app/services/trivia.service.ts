@@ -13,7 +13,7 @@ import { CookieService } from 'ngx-cookie-service';
 export class TriviaService {
 
   //private ServerUrl: string = 'http://54.67.67.7:8085/StarWarsTrivia/';
-  private ServerUrl: string = 'http://localhost:8069/StarWarsTrivia/';
+  private ServerUrl: string = 'http://localhost:8080/StarWarsTrivia/';
   private SwapiUrl: string = 'https://swapi.dev/api/';
   public visible: boolean;
 
