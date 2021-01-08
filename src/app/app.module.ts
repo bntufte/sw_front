@@ -16,6 +16,7 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { RewardComponent } from './components/reward/reward.component';//needed to import manually for HttpClientModule
 import { TriviaComponent } from './components/trivia/trivia.component';
 import { CommonModule } from '@angular/common';
+import { ScoreboardComponent } from './components/scoreboard/scoreboard.component';
 
 
 @NgModule({
@@ -28,8 +29,8 @@ import { CommonModule } from '@angular/common';
     HomeComponent,
     ProfileComponent,
     RewardComponent,
-    TriviaComponent
-   
+    TriviaComponent,
+    ScoreboardComponent
   ],
   imports: [
     BrowserModule,
