@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NewUser } from 'src/app/models/new-user';
+import { Person } from 'src/app/models/person';
 import { User } from 'src/app/models/user';
 import { LoginService } from 'src/app/services/login.service';
 import { ProfileService } from 'src/app/services/profile.service';
@@ -15,6 +16,7 @@ export class ProfileComponent implements OnInit {
   newPassword: string;
   confirmPassword: string;
   message: string = "";
+  rewardPerson : Person[];
 
   constructor(private profile: ProfileService, public login: LoginService) { }
 
