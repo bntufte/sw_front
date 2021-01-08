@@ -28,19 +28,20 @@ const routes: Routes = [
     path : 'register',
     component : RegisterComponent
   },
+
   {
     path: 'trivia',
     component : TriviaComponent
   },
-  {
 
+  {
     path: 'profile',
     component : ProfileComponent
   },
+  
   {
     path: 'reward',
     component : RewardComponent
-
   }
   
 ];

@@ -11,24 +11,24 @@ import { ProfileService } from 'src/app/services/profile.service';
 })
 export class ProfileComponent implements OnInit {
 
-  oldPassword : string;
-  newPassword : string;
-  confirmPassword : string;
-  message : string = "";
+  oldPassword: string;
+  newPassword: string;
+  confirmPassword: string;
+  message: string = "";
 
-  constructor(private profile : ProfileService, public login : LoginService) { }
+  constructor(private profile: ProfileService, public login: LoginService) { }
 
   ngOnInit(): void {
   }
 
-  updateUser(){
-    let currentUser : string = this.login.username;
+  updateUser() {
+    let currentUser: string = this.login.username;
     console.log(currentUser);
     let updateUser = new NewUser(currentUser, this.newPassword, this.confirmPassword);
     let user = new User(this.login.username, this.newPassword);
     this.login.sendCredentials(user).subscribe(
       () => {
-        if (updateUser.password === updateUser.confirmPassword){
+        if (updateUser.password === updateUser.confirmPassword) {
           this.profile.updateProfile(user).subscribe(
             () => {
               this.message = "Password Changed";
@@ -37,14 +37,17 @@ export class ProfileComponent implements OnInit {
               this.message = "Password Was Not Changed";
               console.log(err);
             }
-    
+
           );
-        }else{
+        } else {
           this.message = "Your Passwords Did Not Match";
           console.log("Passwords do not match.");
         }
       },
-      () =>
+      (err) => {
+          this.message = "Incorrect Username or Password";
+          console.log(err);
+      }
     );
 
   }
