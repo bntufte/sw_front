@@ -12,7 +12,7 @@ export class ScoresService {
 
   getAllScores(): Observable<Score[]> {
     
-    return this.http.get<Score[]>('http://54.67.67.7:8085/StarWarsTrivia/scoreboard');
+    return this.http.get('http://localhost:8080/StarWarsTrivia/score') as Observable<Score[]>;
   }
 
   

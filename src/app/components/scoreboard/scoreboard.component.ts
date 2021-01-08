@@ -3,6 +3,7 @@ import { ScoresService } from 'src/app/services/scores.service';
 import { Score } from 'src/app/models/Score';
 
 
+
 @Component({
   selector: 'app-scoreboard',
   templateUrl: './scoreboard.component.html',
@@ -21,8 +22,8 @@ export class ScoreboardComponent implements OnInit {
     this.getScores();
   }
   getScores(){
-    this.scoreList= this.svc.getALLScores().subscribe(
-      (response: any) => {
+    this.svc.getAllScores().subscribe(
+      (response: Score[]) => {
       
       this.scoreList =response;
       
@@ -35,3 +36,4 @@ export class ScoreboardComponent implements OnInit {
 
 
 }
+

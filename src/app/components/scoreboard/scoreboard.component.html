@@ -1,5 +1,6 @@
-<div>
-    <table >
+<div class='div'>
+    <p>If you can read this you're on the right page</p>
+    <table id='score_table'>
         <thead>
             <tr>
                 <th>SCORE</th>
@@ -11,7 +12,7 @@
         <tbody>
             <tr *ngFor="let u of scoreList">
                 <td>{{u.score}}</td>
-                <td>{{u.username}}</td>
+                <td>{{u.userID}}</td>
                 <td>{{u.date}}</td>
             </tr>
         </tbody>
