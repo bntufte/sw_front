@@ -37,7 +37,9 @@ export class LoginComponent implements OnInit {
         if (userInfo != null) {
           this.login.userId = userInfo.userId;
           this.userId = userInfo.userId;
-          this.cookieService.set( 'userId', <string><unknown>userInfo.userId);             
+          this.cookieService.set( 'userId', <string><unknown>userInfo.userId);
+          this.cookieService.set( 'userName', userInfo.username);
+          this.cookieService.set( 'userPass', <string><unknown>userInfo.userId);              
           this.login.username = userInfo.username;
           this.cookieService.set( 'username', userInfo.username);
           console.log(userInfo);
