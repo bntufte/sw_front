@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from "@angular/router";
 import { Person } from 'src/app/models/person';
+import { User } from 'src/app/models/user';
 import { RewardService } from 'src/app/services/reward.service';
 
 @Component({
@@ -10,6 +11,7 @@ import { RewardService } from 'src/app/services/reward.service';
 })
 export class RewardComponent implements OnInit {
 
+  public userInfo: User;
   public doesNotHaveReward: boolean = true;
   public rewardPerson: Person = new Person("", 0, 0, "", "", "", "", "");
   public info: string = "";
@@ -33,7 +35,13 @@ export class RewardComponent implements OnInit {
 
   this.doesNotHaveReward = false;
 
-    this.rew.insertRewardCharacter().subscribe(
+  this.rew.getUserInfo().subscribe(
+    (response: User) => {
+      this.userInfo = response;
+    }
+  )
+
+    this.rew.insertRewardCharacter(this.userInfo).subscribe(
       (response: any) => {
         if (response.status != 201) {
           this.info="Error. Your reward character could not be loaded."

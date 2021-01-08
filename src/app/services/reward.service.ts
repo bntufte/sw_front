@@ -28,12 +28,12 @@ export class RewardService {
     return this.http.get(this.SwapiUrl + 'people/' + this.randomNumber) as Observable<Person>;
   }
 
-  insertRewardCharacter(): Observable<any> {
+  getUserInfo(): Observable<User> {
+    return this.http.get(this.ServerUrl + 'login/' + this.loginComponent.login.userId) as Observable<User>;
+  }
 
-    // let p = (this.randomNumber, this.loginComponent.login.userId);
-
-    let personReward: PersonReward = new PersonReward(this.randomNumber, new User(this.loginComponent.login.userId, null, null));
-
+  insertRewardCharacter(userInfo: User): Observable<any> {
+    let personReward: PersonReward = new PersonReward(this.randomNumber, userInfo);
     return this.http.post(this.ServerUrl + 'reward', personReward) as Observable<any>;
   }
 

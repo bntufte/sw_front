@@ -2,6 +2,6 @@ import { User } from "./user";
 
 export class PersonReward {
 
-    constructor(public personid: number, public user: User) { }
+    constructor(public personId: number, public userInfo: User) { }
 
 }
