@@ -1,0 +1,19 @@
+#reward-div {
+    display: flex;
+    justify-content: center;
+}
+
+#reward-character {
+    border-style:ridge;
+    border-width: 5px;
+    border-color: white;
+    background-color: #B99D31;
+}
+
+#error {
+    color: red;
+}
+
+button:hover {
+    background-color: #1F72B8;
+}

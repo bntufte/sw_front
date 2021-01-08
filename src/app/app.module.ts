@@ -11,7 +11,13 @@ import { FormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import { ScoreboardComponent } from './components/scoreboard/scoreboard.component';
 import { WelcomepageComponent } from './components/welcomepage/welcomepage.component';//needed to import manually for HttpClientModule
-//import { TriviaComponent } from './components/trivia/trivia.component';
+
+import { HomeComponent } from './components/home/home.component';
+import { ProfileComponent } from './components/profile/profile.component';
+
+import { RewardComponent } from './components/reward/reward.component';//needed to import manually for HttpClientModule
+import { TriviaComponent } from './components/trivia/trivia.component';
+import { CommonModule } from '@angular/common';
 
 
 @NgModule({
@@ -23,7 +29,10 @@ import { WelcomepageComponent } from './components/welcomepage/welcomepage.compo
     RegisterComponent,
     ScoreboardComponent,
     WelcomepageComponent,
-   // TriviaComponent
+    HomeComponent,
+    ProfileComponent,
+    RewardComponent,
+    TriviaComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +41,7 @@ import { WelcomepageComponent } from './components/welcomepage/welcomepage.compo
     HttpClientModule,
     BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [LoginComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

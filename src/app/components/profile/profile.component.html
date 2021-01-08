@@ -1,0 +1,59 @@
+<div class='container' id="passUpdate">
+    <div class="col-xl-4 profile updateBox">
+        <br>
+        <h4 class="col-lg-12 text-center" id="header">Update Password</h4>        
+        <label>Current Password:</label>
+        <input class="col-sm-12 form-control" type="password" [(ngModel)]="oldPassword" placeholder="Enter Old Pass"
+            required>
+        <br>
+        <label>New Password:</label>
+        <input class="col-sm-12 form-control" type="password" [(ngModel)]="newPassword" placeholder="Enter New Pass"
+            required>
+        <br>
+        <label>Confirm Password:</label>
+        <input class="col-sm-12 form-control" type="password" [(ngModel)]="confirmPassword" placeholder="Re-Enter Pass"
+            required>
+        <br>
+        <button class='btn btn-primary user-btn' id='update-btn' (click)="updateUser()">Change Password</button>
+        <br>
+        <br>
+        <h6 id="message">{{message}}</h6>
+        <br>
+    </div>    
+</div>
+
+<div class='container' id="showcase">
+    <div class="row">
+        <div class="col-sm-3" id="reward-character1">
+            <h3>Name: {{rewardPerson1.name | titlecase}}</h3>
+            <h5>Hair Color: {{rewardPerson1.hair_color | titlecase}}</h5>
+            <h5>Eye Color: {{rewardPerson1.eye_color | titlecase}}</h5>
+            <h5>Birth Year: {{rewardPerson1.birth_year | titlecase}}</h5>
+        </div>
+        <div class="col-sm-3" id="reward-character2">
+            <h3>Name: {{rewardPerson2.name | titlecase}}</h3>
+            <h5>Hair Color: {{rewardPerson2.hair_color | titlecase}}</h5>
+            <h5>Eye Color: {{rewardPerson2.eye_color | titlecase}}</h5>
+            <h5>Birth Year: {{rewardPerson2.birth_year | titlecase}}</h5>
+        </div>
+        <div class="col-sm-3" id="reward-character3">
+            <h3>Name: {{rewardPerson3.name | titlecase}}</h3>
+            <h5>Hair Color: {{rewardPerson3.hair_color | titlecase}}</h5>
+            <h5>Eye Color: {{rewardPerson3.eye_color | titlecase}}</h5>
+            <h5>Birth Year: {{rewardPerson3.birth_year | titlecase}}</h5>
+        </div>
+        <div class="col-sm-3" id="reward-character4">
+            <h3>Name: {{rewardPerson4.name | titlecase}}</h3>
+            <h5>Hair Color: {{rewardPerson4.hair_color | titlecase}}</h5>
+            <h5>Eye Color: {{rewardPerson4.eye_color | titlecase}}</h5>
+            <h5>Birth Year: {{rewardPerson4.birth_year | titlecase}}</h5>
+        </div>
+    </div>        
+</div>
+
+<div class='col-xl-4 login'>
+    <br>
+    <div class="show-btn">
+        <button class='btn btn-primary user-btn' (click)='showShowcase()'>View Showcase</button>
+    </div>
+</div>

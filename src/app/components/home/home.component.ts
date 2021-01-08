@@ -2,19 +2,16 @@ import { Component, OnInit } from '@angular/core';
 import { NavBarService } from 'src/app/services/nav-bar.service';
 
 @Component({
-  selector: 'app-nav-bar',
-  templateUrl: './nav-bar.component.html',
-  styleUrls: ['./nav-bar.component.css']
+  selector: 'app-home',
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.css']
 })
-export class NavBarComponent implements OnInit {
+export class HomeComponent implements OnInit {
 
   constructor(public nav: NavBarService) { }
 
   ngOnInit(): void {
-  }
-
-  logout() {
-    this.nav.endSession();
+    this.nav.show();
   }
 
 }
