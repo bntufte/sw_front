@@ -4,7 +4,7 @@ import { Person } from '../models/person';
 import { HttpClient } from '@angular/common/http';
 import { LoginComponent } from '../components/login/login.component';
 import { PersonReward } from '../models/person-reward';
-import { User } from '../models/user';
+import { Useralt } from '../models/useralt';
 
 @Injectable({
   providedIn: 'root'
@@ -28,11 +28,11 @@ export class RewardService {
     return this.http.get(this.SwapiUrl + 'people/' + this.randomNumber) as Observable<Person>;
   }
 
-  getUserInfo(): Observable<User> {
-    return this.http.get(this.ServerUrl + 'login/' + this.loginComponent.login.userId) as Observable<User>;
+  getUserInfo(): Observable<Useralt> {
+    return this.http.get(this.ServerUrl + 'login/' + this.loginComponent.login.userId) as Observable<Useralt>;
   }
 
-  insertRewardCharacter(userInfo: User): Observable<any> {
+  insertRewardCharacter(userInfo: Useralt): Observable<any> {
     let personReward: PersonReward = new PersonReward(this.randomNumber, userInfo);
     return this.http.post(this.ServerUrl + 'reward', personReward) as Observable<any>;
   }
