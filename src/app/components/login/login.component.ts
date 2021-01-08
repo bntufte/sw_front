@@ -32,7 +32,7 @@ export class LoginComponent implements OnInit {
         this.link = "welcome";
         this.message = "Login Was Successful";
       },
-      () => {
+      (err) => {
         //status code 500 or 400
         this.message = "Incorrect Username or Password";
       }
