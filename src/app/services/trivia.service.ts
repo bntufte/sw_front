@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { Question } from '../models/question';
 import { LoginComponent } from '../components/login/login.component';
 import { Score } from '../models/score';
-import { User } from '../models/user';
+import { Useralt } from '../models/useralt';
 
 @Injectable({
   providedIn: 'root'
@@ -56,7 +56,7 @@ export class TriviaService {
 
   enterScore(scoreNumber: number) {
 
-    let score: Score = new Score(scoreNumber, new Date, new User(this.loginComponent.login.userId, null, null));
+    let score: Score = new Score(scoreNumber, new Date, new Useralt(this.loginComponent.login.userId, null, null));
 
     this.http.post(this.ServerUrl + 'score', JSON.stringify(score));
   }
