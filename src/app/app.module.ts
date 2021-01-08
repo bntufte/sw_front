@@ -8,11 +8,14 @@ import { LoginComponent } from './components/login/login.component';
 import { BannerComponent } from './components/banner/banner.component';
 import { RegisterComponent } from './components/register/register.component';
 import { FormsModule } from '@angular/forms';
-import {HttpClientModule} from '@angular/common/http';
+
+import {HttpClientModule} from '@angular/common/http';//needed to import manually for HttpClientModule
+import { HomeComponent } from './components/home/home.component';
+import { ProfileComponent } from './components/profile/profile.component';
+
 import { RewardComponent } from './components/reward/reward.component';//needed to import manually for HttpClientModule
 import { TriviaComponent } from './components/trivia/trivia.component';
 import { CommonModule } from '@angular/common';
-import { HomeComponent } from './components/home/home.component';//needed to import manually for HttpClientModule
 
 
 @NgModule({
@@ -22,9 +25,13 @@ import { HomeComponent } from './components/home/home.component';//needed to imp
     LoginComponent,
     BannerComponent,
     RegisterComponent,
+
+    HomeComponent,
+    ProfileComponent
+  
     RewardComponent,
     TriviaComponent
-    HomeComponent
+   
   ],
   imports: [
     BrowserModule,

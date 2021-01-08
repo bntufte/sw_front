@@ -1,0 +1,28 @@
+.profile{
+    margin:auto;
+}
+
+.updateBox{
+    background-color: white;
+}
+
+#update-btn{
+    width: 100%;
+    margin:auto;
+    
+}
+
+#passUpdate{
+    margin: auto;
+    padding: 110px 0px;
+}
+
+#update-btn{
+    background-color: black;
+    border:none;
+    color:yellow;
+}
+
+#message{
+    text-align: center;
+}
