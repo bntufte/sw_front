@@ -13,4 +13,5 @@ export class ProfileService {
   updateProfile(user : User) : Observable<any>{
     return this.http.put<any>("http://localhost:8069/StarWarsTrivia/login/update", user);
   }
+
 }
