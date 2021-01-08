@@ -12,6 +12,14 @@
     
 }
 
+#showcase{
+    color:yellow;
+}
+
+/* #reward-character1, #reward-character2, #reward-character3, #reward-character4{
+    color:yellow;
+} */
+
 #passUpdate{
     margin: auto;
     padding: 110px 0px;
