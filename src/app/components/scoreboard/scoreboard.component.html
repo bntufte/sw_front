@@ -1,18 +1,19 @@
-<div>
-    <table >
-        <thead>
+<div id="main-div" class='container'>
+    <table id="score-table" class="col-xl-4 table table-striped">
+        <thead class="thead-dark">
             <tr>
                 <th>SCORE</th>
-                <th>USER NAME</th>
+                <!-- <th>USERNAME</th> -->
                 <th>DATE</th>
                 
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let u of s.scores">
-                <td>{{u.score}}</td>
-                <td>{{u.username}}</td>
-                <td>{{u.date}}</td>
+            <tr *ngFor="let score of scoreList">
+                <td>{{score.score}}</td>
+                <!-- <td>{{score.scoreUser.username}}</td> -->
+                <!-- <td>username</td> -->
+                <td>{{score.generation | date}}</td>
             </tr>
         </tbody>
     </table>
