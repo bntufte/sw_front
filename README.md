@@ -11,7 +11,7 @@ In this web based trivia game, players are asked questions about different Star 
 	* TypeScript
 	* NodeJS
 * Visual Studio Code
-* [Star Wars Api](https://swapi.dev/)
+* [Star Wars API](https://swapi.dev/)
 * Git
 
 ## Features
@@ -48,5 +48,5 @@ In this web based trivia game, players are asked questions about different Star 
 ## Contributors
 * [Brandon Tufte](https://github.com/bntufte)
 * [Lew Griffith](https://github.com/logriffith)
-* [John L. Rios Jr.](https://github.com/jlrjr98)}
+* [John L. Rios Jr.](https://github.com/jlrjr98)
 * [Skyler Tesar](https://github.com/skytsar)
