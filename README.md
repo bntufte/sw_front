@@ -31,13 +31,13 @@ In this web based trivia game, players are asked questions about different Star 
 * Add a system for trading cards
 * Fix bugs involving the display and removal of warnings
 * Reward tokens to users, which they can use to 'buy' hints during trivia games
-* Alter styling to be more visuallly appealing and cohesive
+* Alter styling to be more visually appealing and cohesive
 
 ## Getting Started
 * git clone https://github.com/bntufte/sw_front.git
 * git pull
 * Open the project in Visual Studio Code. Open a shell in the project and enter "ng update" to acquire all the necessary dependencies
-* Change the server urls in the services
+* Change the server URLs in the services
 
 ## Usage
 * In the shell of Visual Studio Code, enter "ng serve -o" to run the server and open it in a browser tab
