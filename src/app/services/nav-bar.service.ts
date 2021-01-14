@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class NavBarService {
   
-  private ServerUrl: string = 'http://localhost:8069/StarWarsTrivia/';
+  private ServerUrl: string = 'http://localhost:8080/StarWarsTrivia/';
   public visible: boolean;
 
   constructor(private http: HttpClient) { 

@@ -16,11 +16,11 @@ export class ProfileService {
   constructor(private http :  HttpClient) { }
 
   updateProfile(user : User) : Observable<any>{
-    return this.http.put<any>("http://localhost:8069/StarWarsTrivia/login/update/", user);
+    return this.http.put<any>("http://localhost:8080/StarWarsTrivia/login/update/", user);
   }
 
   getShowcase(userId : number) : Observable<Showcase>{
-    return this.http.get<Showcase>("http://localhost:8069/StarWarsTrivia/showcase/" + userId);
+    return this.http.get<Showcase>("http://localhost:8080/StarWarsTrivia/showcase/" + userId);
   }
 
   getCharacter(personId : number) : Observable<Person>{

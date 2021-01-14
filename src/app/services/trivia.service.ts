@@ -5,6 +5,7 @@ import { Question } from '../models/question';
 import { LoginComponent } from '../components/login/login.component';
 import { Score } from '../models/score';
 import { Useralt } from '../models/useralt';
+import { CookieService } from 'ngx-cookie-service';
 
 @Injectable({
   providedIn: 'root'
@@ -12,11 +13,11 @@ import { Useralt } from '../models/useralt';
 export class TriviaService {
 
   //private ServerUrl: string = 'http://54.67.67.7:8085/StarWarsTrivia/';
-  private ServerUrl: string = 'http://localhost:8069/StarWarsTrivia/';
+  private ServerUrl: string = 'http://localhost:8080/StarWarsTrivia/';
   private SwapiUrl: string = 'https://swapi.dev/api/';
   public visible: boolean;
 
-  constructor(private http: HttpClient, public loginComponent: LoginComponent) { }
+  constructor(private http: HttpClient, public loginComponent: LoginComponent, public cookieService : CookieService) { }
 
   getRandomInt(max: number): number {
     return Math.floor(Math.random() * Math.floor(max));
@@ -56,7 +57,7 @@ export class TriviaService {
 
   enterScore(scoreNumber: number) {
 
-    let score: Score = new Score(scoreNumber, new Date, new Useralt(this.loginComponent.login.userId, null, null));
+    let score: Score = new Score(scoreNumber, new Date, new Useralt(<number><unknown>this.cookieService.get('userId'), null, null));
 
     this.http.post(this.ServerUrl + 'score', JSON.stringify(score));
   }

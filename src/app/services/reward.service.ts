@@ -6,6 +6,7 @@ import { LoginComponent } from '../components/login/login.component';
 import { PersonReward } from '../models/person-reward';
 import { Useralt } from '../models/useralt';
 import { User } from '../models/user';
+import { CookieService } from 'ngx-cookie-service';
 
 @Injectable({
   providedIn: 'root'
@@ -13,12 +14,12 @@ import { User } from '../models/user';
 export class RewardService {
 
   // private ServerUrl: string = 'http://54.67.67.7:8085/StarWarsTrivia/';
-  private ServerUrl: string = 'http://localhost:8069/StarWarsTrivia/';
+  private ServerUrl: string = 'http://localhost:8080/StarWarsTrivia/';
   private SwapiUrl: string = 'https://swapi.dev/api/';
 
   public randomNumber: number;
 
-  constructor(private http: HttpClient, public loginComponent: LoginComponent) { }
+  constructor(private http: HttpClient, public loginComponent: LoginComponent, public cookieService : CookieService) { }
 
   getRandomInt(max: number): number {
     return Math.floor(Math.random() * Math.floor(max));
@@ -30,7 +31,7 @@ export class RewardService {
   }
 
   getUserInfo(): Observable<Useralt> {
-    return this.http.get(this.ServerUrl + 'login/' + this.loginComponent.login.userId) as Observable<Useralt>;
+    return this.http.get(this.ServerUrl + 'login/' + <number><unknown>this.cookieService.get('userId')) as Observable<Useralt>;
   }
 
   insertRewardCharacter(userInfo: User): Observable<any> {
