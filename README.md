@@ -1,27 +1,52 @@
-# StarWarsTrivia
+# Star Wars Trivia Front End
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.5.
+## Project Description
+In this web based trivia game, players are asked questions about different Star Wars topics and they must get as many correct answers as possible. Success is incentivized by potential to earn rewards. Players can register and sign up to participate in the leader board and character showcase. Players are issued character elements to premiere in their showcase, gain additional options as they play the game.
 
-## Development server
+## Technologies Used
+* Angular
+	* HTML
+	* CSS
+	* Bootstrap
+	* TypeScript
+	* NodeJS
+* Visual Studio Code
+* [Star Wars API](https://swapi.dev/)
+* Git
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Features
+**Ready Features**
+* Login
+* Registration
+* Combine Template Question with Star Wars API Data to Create Unique Trivia Questions
+* Insert Reward Character
+* Get User's Showcase
+* Logout
 
-## Code scaffolding
+**To-do List of Improvements**
+* Make username display along with score and date in the scoreboard/leaderboard
+* Complete functionality for updating user's information (username and password)
+* Add multiple choice answers
+* Add a chat board
+* Add a system for trading cards
+* Fix bugs involving the display and removal of warnings
+* Reward tokens to users, which they can use to 'buy' hints during trivia games
+* Alter styling to be more visuallly appealing and cohesive
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Getting Started
+* git clone https://github.com/bntufte/sw_front.git
+* git pull
+* Open the project in Visual Studio Code. Open a shell in the project and enter "ng update" to acquire all the necessary dependencies
+* Change the server urls in the services
 
-## Build
+## Usage
+* In the shell of Visual Studio Code, enter "ng serve -o" to run the server and open it in a browser tab
+* Once the Angular server has launched, you should see the following screen:
+![](./StarWarsFrontEndLoginScreen.png)
+* Launch the Java server, following the necessary steps specified in that [Git Repository](https://github.com/bntufte/sw_back)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Contributors
+* [Brandon Tufte](https://github.com/bntufte)
+* [Lew Griffith](https://github.com/logriffith)
+* [John L. Rios Jr.](https://github.com/jlrjr98)
+* [Skyler Tesar](https://github.com/skytsar)
