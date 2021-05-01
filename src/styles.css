@@ -1,3 +1,38 @@
 body{
     background-color: #343a40!important;
 }
+
+@font-face{
+    font-family: Star-Jedi-Solid;
+    src: url(assets/fonts/Starjedi.ttf);
+}
+
+@font-face{
+    font-family: Star-Jedi-Open;
+    src: url(assets/fonts/Starjhol.ttf);
+}
+
+@font-face{
+    font-family: Star-Jedi-Outline;
+    src: url(assets/fonts/Starjout.ttf);
+}
+
+@font-face{
+    font-family: Star-Jedi-Special;
+    src: url(assets/fonts/STJEDISE.TTF);
+}
+
+@font-face{
+    font-family: Star-Jedi-Logo-1;
+    src: url(assets/fonts/Stjldbl1.ttf);
+}
+
+@font-face{
+    font-family: Star-Jedi-Logo-2;
+    src: url(assets/fonts/Stjldbl2.ttf);
+}
+
+@font-face{
+    font-family: Star-Jedi-Mono;
+    src: url(assets/fonts/Strjmono.ttf);
+}
