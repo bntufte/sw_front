@@ -18,7 +18,7 @@ export class LoginService {
 
   sendCredentials(user : User) : Observable<UserInfo>{
     let body : User = user;
-    return this.http.post<UserInfo>("http://13.58.63.20/StarWarsTrivia/login", body);
+    return this.http.post<UserInfo>("http://13.58.63.20:8085/StarWarsTrivia/login", body);
   }
 
 }
